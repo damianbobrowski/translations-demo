@@ -13,3 +13,8 @@ services:
       WEBLATE_ADMIN_PASSWORD: admin
       WEBLATE_ADMIN_EMAIL: weblate.admin@example.com
       WEBLATE_REGISTRATION_OPEN: 0
+      WEBLATE_MT_LIBRETRANSLATE_API_URL: "https://translate.argosopentech.com"
+      WEBLATE_MT_LIBRETRANSLATE_KEY: "1"
+    volumes:
+    - weblate-data:/app/data
+    - ./backup/borgbackup:/borgbackup
