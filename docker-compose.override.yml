@@ -4,17 +4,29 @@ services:
     ports:
       - 127.0.0.1:6080:8080
     environment:
-      WEBLATE_EMAIL_HOST: smtp.example.com
-      WEBLATE_EMAIL_HOST_USER: user
-      WEBLATE_EMAIL_HOST_PASSWORD: pass
-      WEBLATE_SERVER_EMAIL: weblate@example.com
-      WEBLATE_DEFAULT_FROM_EMAIL: weblate@example.com
-      WEBLATE_SITE_DOMAIN: weblate.example.com
+      WEBLATE_SERVER_EMAIL: noreply@app.hyperbim.com
+      WEBLATE_DEFAULT_FROM_EMAIL: noreply@app.hyperbim.com
+      WEBLATE_SITE_DOMAIN: translations.creoox.local:6080
       WEBLATE_ADMIN_PASSWORD: admin
       WEBLATE_ADMIN_EMAIL: weblate.admin@example.com
-      WEBLATE_REGISTRATION_OPEN: 0
+      WEBLATE_REGISTRATION_OPEN: 1
       WEBLATE_MT_LIBRETRANSLATE_API_URL: "https://translate.argosopentech.com"
       WEBLATE_MT_LIBRETRANSLATE_KEY: "1"
+      WEBLATE_SOCIAL_AUTH_KEYCLOAK_KEY: ""
+      WEBLATE_SOCIAL_AUTH_KEYCLOAK_SECRET: ""
+      WEBLATE_SOCIAL_AUTH_KEYCLOAK_PUBLIC_KEY: ""
+      WEBLATE_SOCIAL_AUTH_KEYCLOAK_ALGORITHM: "RS256"
+      WEBLATE_SOCIAL_AUTH_KEYCLOAK_AUTHORIZATION_URL: "https://dev.accounts.creoox.com/realms/creoox/protocol/openid-connect/auth"
+      WEBLATE_SOCIAL_AUTH_KEYCLOAK_ACCESS_TOKEN_URL: "https://dev.accounts.creoox.com/realms/creoox/protocol/openid-connect/token"
+
+      WEBLATE_EMAIL_HOST: "it.com"
+      WEBLATE_EMAIL_PORT: 587
+      WEBLATE_EMAIL_HOST_USER: ""
+      WEBLATE_EMAIL_HOST_PASSWORD: ""
+      WEBLATE_EMAIL_USE_TLS: 0
+      WEBLATE_EMAIL_USE_SSL: 1
+    
+    
     volumes:
     - weblate-data:/app/data
     - ./backup/borgbackup:/borgbackup
