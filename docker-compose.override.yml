@@ -12,3 +12,4 @@ services:
       WEBLATE_SITE_DOMAIN: weblate.example.com
       WEBLATE_ADMIN_PASSWORD: admin
       WEBLATE_ADMIN_EMAIL: weblate.admin@example.com
+      WEBLATE_REGISTRATION_OPEN: 0
